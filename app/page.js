@@ -406,7 +406,7 @@ export default function Home() {
       const scrollPercentage = Math.min(newScrollY / maxScroll, 1);
       
       // Add subtle movement to Powerpuff Girl based on scroll position
-      // Base position is in the left side, below the navbar where she won't be hidden
+      // Base position is in the left side, below the navbar where she won&apos;t be hidden
       const baseX = window.innerWidth < 768 ? 15 : 12;
       const baseY = window.innerWidth < 768 ? 25 : 22;
       
@@ -433,7 +433,7 @@ export default function Home() {
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [sparkles.length]);
+  }, [sparkles]);
   
   return (
     <main className="relative min-h-screen overflow-hidden">
@@ -535,7 +535,7 @@ export default function Home() {
             </div>
           </div>
           <p className="text-lg md:text-xl mb-8 text-black-600 font-[family-name:var(--font-sans)] font-bold">
-            It isn't just another hackathon. 
+            It isn&apos;t just another hackathon. 
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <BubbleButton primary>Register Now</BubbleButton>

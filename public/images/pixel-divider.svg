@@ -1,0 +1,20 @@
+<svg width="800" height="24" viewBox="0 0 800 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 12H800" stroke="url(#paint0_linear)" stroke-width="2" stroke-dasharray="12 12" opacity="0.4"/>
+  <path d="M400 8L400 16" stroke="#FFC0CB" stroke-width="2" opacity="0.3"/>
+  <circle cx="400" cy="12" r="4" fill="#FFC0CB" opacity="0.3"/>
+  <circle cx="376" cy="12" r="3" fill="#B19CD9" opacity="0.2"/>
+  <circle cx="424" cy="12" r="3" fill="#B19CD9" opacity="0.2"/>
+  <circle cx="352" cy="12" r="3" fill="#87CEEB" opacity="0.2"/>
+  <circle cx="448" cy="12" r="3" fill="#87CEEB" opacity="0.2"/>
+  <circle cx="328" cy="12" r="3" fill="#B19CD9" opacity="0.15"/>
+  <circle cx="472" cy="12" r="3" fill="#B19CD9" opacity="0.15"/>
+  <circle cx="304" cy="12" r="3" fill="#87CEEB" opacity="0.15"/>
+  <circle cx="496" cy="12" r="3" fill="#87CEEB" opacity="0.15"/>
+  <defs>
+    <linearGradient id="paint0_linear" x1="0" y1="12" x2="800" y2="12" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#87CEEB" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#B19CD9" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#87CEEB" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg>

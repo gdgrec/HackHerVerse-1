@@ -1,0 +1,18 @@
+<svg width="160" height="100" viewBox="0 0 160 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Base cloud shape -->
+  <path d="M30 70 H40 V80 H60 V90 H90 V80 H110 V90 H130 V80 H140 V70 H150 V40 H140 V30 H110 V40 H90 V30 H70 V40 H50 V50 H40 V60 H30 V70 Z" fill="white" fill-opacity="0.9"/>
+  
+  <!-- Cloud highlights -->
+  <path d="M40 60 H50 V70 H60 V80 H50 V70 H40 V60 Z" fill="#F0F8FF" fill-opacity="0.9"/>
+  <path d="M80 40 H90 V50 H100 V60 H90 V50 H80 V40 Z" fill="#F0F8FF" fill-opacity="0.9"/>
+  <path d="M120 70 H130 V60 H120 V70 Z" fill="#F0F8FF" fill-opacity="0.9"/>
+  <path d="M140 40 H150 V50 H140 V40 Z" fill="#F0F8FF" fill-opacity="0.9"/>
+  
+  <!-- Cloud shadows -->
+  <path d="M60 80 H70 V90 H110 V80 H100 V70 H90 V80 H60 Z" fill="#E6E6FA" fill-opacity="0.7"/>
+  <path d="M100 40 H110 V50 H120 V60 H110 V50 H100 V40 Z" fill="#E6E6FA" fill-opacity="0.7"/>
+  <path d="M50 50 H60 V60 H50 V50 Z" fill="#E6E6FA" fill-opacity="0.7"/>
+  
+  <!-- Cloud outline details -->
+  <path d="M60 90 H90 M110 90 H130 M140 70 H150 M150 40 H140 M110 30 H140 M70 30 H110 M50 40 H70 M30 60 H50" stroke="#F0F8FF" stroke-width="2" stroke-opacity="0.5" />
+</svg>

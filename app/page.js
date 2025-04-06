@@ -521,7 +521,7 @@ export default function Home() {
                   src="/images/logo.png" 
                   width={500} 
                   height={500} 
-                  alt="HackaBliss Logo" 
+                  alt="HackHerVerse Logo" 
                   className="mb-4 drop-shadow-xl w-auto h-auto max-w-[200px] sm:max-w-[300px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[500px]" 
                   priority
                 />
@@ -916,7 +916,6 @@ export default function Home() {
           <div className="flex flex-col items-center mb-10">
             <div className="glassmorphism rounded-2xl p-6 text-center max-w-md">
               <div className="w-32 h-32 mx-auto mb-4 relative">
-                <Image src="/images/logo.png" width={128} height={128} alt="WTM REC Logo" className="object-contain" />
                 <div className="absolute -top-2 -right-2 animate-spin-slow">
                   <Image src="/images/pixel-sparkle.svg" width={20} height={20} alt="sparkle" />
                 </div>
@@ -930,19 +929,13 @@ export default function Home() {
           <h3 className="text-2xl font-bold text-center text-pink-600 mb-6 font-[family-name:var(--font-display)]">Faculty Coordinators</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="glassmorphism rounded-2xl p-6 text-center">
-              <div className="w-24 h-24 mx-auto mb-4 bg-gradient-to-r from-pink-300 to-pink-400 rounded-full flex items-center justify-center">
-                <span className="text-2xl font-bold text-white">CS</span>
-              </div>
-              <h4 className="text-xl font-bold text-blue-700 mb-1 font-[family-name:var(--font-display)]">Dr. Jane Smith</h4>
+              <h4 className="text-xl font-bold text-blue-700 mb-1 font-[family-name:var(--font-display)]">Dr P Kumar</h4>
               <p className="text-pink-600 text-base mb-2 font-[family-name:var(--font-sans)]">Professor, Computer Science</p>
               <p className="text-blue-800 text-base font-[family-name:var(--font-sans)]">Faculty Advisor, WTM REC</p>
             </div>
             
             <div className="glassmorphism rounded-2xl p-6 text-center">
-              <div className="w-24 h-24 mx-auto mb-4 bg-gradient-to-r from-blue-300 to-blue-400 rounded-full flex items-center justify-center">
-                <span className="text-2xl font-bold text-white">IT</span>
-              </div>
-              <h4 className="text-xl font-bold text-blue-700 mb-1 font-[family-name:var(--font-display)]">Dr. Robert Johnson</h4>
+              <h4 className="text-xl font-bold text-blue-700 mb-1 font-[family-name:var(--font-display)]">Dr. Rakesh Kumar</h4>
               <p className="text-pink-600 text-base mb-2 font-[family-name:var(--font-sans)]">Associate Professor, IT Department</p>
               <p className="text-blue-800 text-base font-[family-name:var(--font-sans)]">Technical Mentor, WTM REC</p>
             </div>

@@ -23,7 +23,7 @@ const fredoka = Fredoka({
 });
 
 export const metadata = {
-  title: "HackaBliss 2025 | A Dreamy Y2K Hackathon",
+  title: "HackHerVerse 2025 | A Dreams of Codes",
   description: "Where pastel meets power — a hackathon for dreamers and coders!",
 };
 

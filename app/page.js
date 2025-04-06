@@ -871,16 +871,16 @@ export default function Home() {
               answer="No, participation in HackHerVerse is completely free of charge. We believe in providing equal opportunities for all women in technology."
             />
             <FaqItem 
-              question="What if I don't have a team?" 
-              answer="We encourage you to form a team before registering. However, if you're having trouble finding teammates, reach out to us and we'll try to connect you with other participants looking for team members."
+              question="What if I don&apos;t have a team?" 
+              answer="We encourage you to form a team before registering. However, if you&apos;re having trouble finding teammates, reach out to us and we&apos;ll try to connect you with other participants looking for team members."
             />
             <FaqItem 
               question="Do I need to have coding experience?" 
-              answer="While some coding experience is helpful, we welcome participants of all skill levels. What's most important is your enthusiasm to learn and create. We'll have mentors available to guide you throughout the hackathon."
+              answer="While some coding experience is helpful, we welcome participants of all skill levels. What&apos;s most important is your enthusiasm to learn and create. We&apos;ll have mentors available to guide you throughout the hackathon."
             />
             <FaqItem 
               question="What should I bring to the hackathon?" 
-              answer="Since this is an online hackathon, you'll need a computer with a stable internet connection. Make sure you have the necessary software installed for your project. It's also good to have a quiet workspace and stay hydrated!"
+              answer="Since this is an online hackathon, you&apos;ll need a computer with a stable internet connection. Make sure you have the necessary software installed for your project. It&apos;s also good to have a quiet workspace and stay hydrated!"
             />
             <FaqItem 
               question="How will the projects be judged?" 

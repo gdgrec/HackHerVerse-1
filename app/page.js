@@ -175,7 +175,7 @@ const PixelCloud = ({ className = '', style = {}, size = 1, variant = 1 }) => {
     animationClass = 'animate-float-slow';
     width = 140;
     height = 100;
-    opacity = 0.85;
+    opacity = 0.;
   } else if (variant === 2) {
     animationClass = 'animate-float-medium';
     width = 120;
@@ -615,8 +615,8 @@ export default function Home() {
             Rules
           </h2>
           <div className="mb-8 glassmorphism rounded-2xl p-6 text-center">
-            <h3 className="text-2xl font-bold mb-4 font-[family-name:var(--font-display)] text-pink-600">Download Presentation</h3>
-            <p className="text-base text-blue-800 font-[family-name:var(--font-sans)] mb-4">Download the presentation to get all the details about the hackathon rules, submission guidelines, and judging criteria.</p>
+            <h3 className="text-2xl font-bold mb-4 font-[family-name:var(--font-display)] text-pink-600">Download PPT Template</h3>
+            <p className="text-base text-blue-800 font-[family-name:var(--font-sans)] mb-4">PPT Template for Round 1. Deadline for PPT submission is 20th April.</p>
             <BubbleButton 
               primary 
               href="/Hackerverse_PPT.pptx" 
@@ -942,12 +942,14 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="glassmorphism rounded-2xl p-6 text-center">
               <h4 className="text-xl font-bold text-blue-700 mb-1 font-[family-name:var(--font-display)]">Dr P Kumar</h4>
-              <p className="text-blue-800 text-base font-[family-name:var(--font-sans)]">Convenor, WTM REC</p>
+              <p className="text-pink-600 text-base mb-2 font-[family-name:var(--font-sans)]">Professor, Computer Science</p>
+              <p className="text-blue-800 text-base font-[family-name:var(--font-sans)]">Faculty Advisor, WTM REC</p>
             </div>
             
             <div className="glassmorphism rounded-2xl p-6 text-center">
               <h4 className="text-xl font-bold text-blue-700 mb-1 font-[family-name:var(--font-display)]">Dr. Rakesh Kumar</h4>
-              <p className="text-blue-800 text-base font-[family-name:var(--font-sans)]">Faculty Coordinator, WTM REC</p>
+              <p className="text-pink-600 text-base mb-2 font-[family-name:var(--font-sans)]">Associate Professor, IT Department</p>
+              <p className="text-blue-800 text-base font-[family-name:var(--font-sans)]">Technical Mentor, WTM REC</p>
             </div>
           </div>
         </div>
@@ -996,7 +998,7 @@ export default function Home() {
       <section id="contact">
       <footer className="py-8 px-4 sm:px-6 md:px-8">
         <div className="max-w-4xl mx-auto text-center section-container">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 font-[family-name:var(--font-display)] text-black-600">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 font-[family-name:var(--font-display)] text-pink-600">
             Contact Us
           </h2>
           
@@ -1032,8 +1034,18 @@ export default function Home() {
             </div>
           </div>
           
+          <div className="glassmorphism p-3 rounded-xl mb-6 max-w-[200px] mx-auto">
+            <p className="font-bold text-blue-800 mb-1 text-sm font-[family-name:var(--font-display)]">Email us at</p>
+            <a href="mailto:gdgrec@gmail.com" className="text-pink-500 hover:text-pink-700 transition-colors flex items-center justify-center text-sm font-[family-name:var(--font-sans)]">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              gdgrec@gmail.com
+            </a>
+          </div>
+
           <div className="flex justify-center space-x-6 mb-6">
-            <a href="#" className="text-blue-800 hover:text-blue-600 transition-colors relative group">
+            <a href="https://www.linkedin.com/company/women-techmakers-rec?trk=public_post_feed-actor-name" className="text-blue-800 hover:text-blue-600 transition-colors relative group">
               <span className="text-2xl">
                 <Image src="/linkedin.svg" width={24} height={24} alt="LinkedIn" />
               </span>
@@ -1041,30 +1053,39 @@ export default function Home() {
                 <Image src="/images/pixel-sparkle.svg" width={12} height={12} alt="sparkle" />
               </span>
             </a>
-            <a href="#" className="text-blue-800 hover:text-blue-600 transition-colors relative group">
+            <a href="https://www.instagram.com/wtmrec/#" className="text-blue-800 hover:text-blue-600 transition-colors relative group">
               <Image src="/instagram.svg" width={24} height={24} alt="Instagram" />
               <span className="absolute -top-2 -right-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <Image src="/images/pixel-sparkle.svg" width={12} height={12} alt="sparkle" />
               </span>
             </a>
-            <a href="#" className="text-blue-800 hover:text-blue-600 transition-colors relative group">
-              <Image src="/gmail.svg" width={24} height={24} alt="Gmail" />
+            <a href="https://www.youtube.com/@gdgrec" target="_blank" rel="noopener noreferrer" className="text-blue-800 hover:text-blue-600 transition-colors relative group">
+              <Image src="/youtube.svg" width={24} height={24} alt="Gmail" />
               <span className="absolute -top-2 -right-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <Image src="/images/pixel-sparkle.svg" width={12} height={12} alt="sparkle" />
               </span>
             </a>
           </div>
           
-          <div className="mb-4">
-            <p className="text-sm text-blue-800 mb-1">
-              Website Developed by
-            </p>
-            <a href="https://www.linkedin.com/in/srevarsha" target="_blank" rel="noopener noreferrer" className="text-pink-500 hover:text-pink-700 transition-colors font-medium">
+          <div className="mb-4 glassmorphism p-3 rounded-xl max-w-[250px] mx-auto group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <div className="flex items-center justify-center space-x-2 mb-1">
+              <p className="text-sm text-blue-800 font-bold font-[family-name:var(--font-display)] relative">
+                <span className="absolute -top-1 -right-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <Image src="/images/pixel-sparkle.svg" width={10} height={10} alt="sparkle" />
+                </span>
+                Website Developed by
+              </p>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-pink-500 group-hover:animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <a href="https://www.linkedin.com/in/srevarsha" target="_blank" rel="noopener noreferrer" 
+               className="text-pink-500 hover:text-pink-700 transition-all duration-300 font-medium flex items-center justify-center group-hover:scale-105">
               Sre varsha N
             </a>
           </div>
           
-          <p className="text-sm text-blue-800">
+          <p className="text-sm text-purple-700">
             © 2025 WTM REC. All rights reserved.
           </p>
         </div>

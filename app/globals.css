@@ -38,6 +38,12 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Improved smooth scrolling */
+* {
+  scroll-margin-top: 80px; /* Adds margin for anchor links to account for fixed navbar */
 }
 
 @keyframes sparkle {
@@ -143,10 +149,11 @@ body::after {
   background: white;
   border: 3px solid #333;
   box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
   image-rendering: pixelated;
   position: relative;
   overflow: hidden;
+  will-change: transform, box-shadow;
 }
 
 .glassmorphism::after {
@@ -237,6 +244,35 @@ body::after {
   will-change: transform;
 }
 
+/* Global text size utilities */
+.text-responsive-base {
+  font-size: 1rem !important;
+}
+
+.text-responsive-lg {
+  font-size: 1.125rem !important;
+}
+
+.text-responsive-xl {
+  font-size: 1.25rem !important;
+}
+
+.text-responsive-2xl {
+  font-size: 1.5rem !important;
+}
+
+.text-responsive-3xl {
+  font-size: 1.875rem !important;
+}
+
+.text-responsive-4xl {
+  font-size: 2.25rem !important;
+}
+
+.text-responsive-5xl {
+  font-size: 3rem !important;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .glassmorphism {
@@ -248,15 +284,56 @@ body::after {
   }
   
   h1 {
-    font-size: clamp(2rem, 8vw, 4rem) !important;
+    font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
   }
   
   h2 {
-    font-size: clamp(1.5rem, 6vw, 2.5rem) !important;
+    font-size: clamp(1.3rem, 4.5vw, 2rem) !important;
   }
   
-  p {
-    font-size: clamp(0.875rem, 4vw, 1.125rem) !important;
+  h3 {
+    font-size: clamp(0.9rem, 3vw, 1.4rem) !important;
+  }
+  
+  h4 {
+    font-size: clamp(0.85rem, 2.5vw, 1.2rem) !important;
+  }
+  
+  p, li, a {
+    font-size: clamp(0.85rem, 3vw, 1.1rem) !important;
+  }
+  
+  .sparkle-container {
+    opacity: 0.95;
+  }
+  
+  /* Responsive text utilities for mobile */
+  .text-responsive-base {
+    font-size: 0.9rem !important;
+  }
+  
+  .text-responsive-lg {
+    font-size: 1.05rem !important;
+  }
+  
+  .text-responsive-xl {
+    font-size: 1.15rem !important;
+  }
+  
+  .text-responsive-2xl {
+    font-size: 1.25rem !important;
+  }
+  
+  .text-responsive-3xl {
+    font-size: 1.4rem !important;
+  }
+  
+  .text-responsive-4xl {
+    font-size: 1.6rem !important;
+  }
+  
+  .text-responsive-5xl {
+    font-size: 1.8rem !important;
   }
 }
 
@@ -387,7 +464,28 @@ body::after {
 
 /* Cloud container that fades based on scroll position */
 .cloud-container {
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Scroll reveal animations */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
 }
 
 @media (max-width: 768px) {

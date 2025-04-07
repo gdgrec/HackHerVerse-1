@@ -148,7 +148,7 @@ const PixelCloud = ({ className = '', style = {}, size = 1, variant = 1 }) => {
   let animationClass = '';
   let width = 140;
   let height = 100;
-  let opacity = 0.85; // Higher opacity for better visibility
+  let opacity = 0.90; // Higher opacity for better visibility
   
   // Responsive sizing based on screen size
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -433,7 +433,7 @@ export default function Home() {
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [sparkles]);
+  }, []); // Run only once on mount
   
   return (
     <main className="relative min-h-screen overflow-hidden">
@@ -537,9 +537,8 @@ export default function Home() {
           <p className="text-lg md:text-xl mb-8 text-black-600 font-[family-name:var(--font-sans)] font-bold">
             It isn&apos;t just another hackathon. 
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <BubbleButton primary>Register Now</BubbleButton>
-            <BubbleButton>Learn More</BubbleButton>
           </div>
         </div>
       </section>
@@ -563,7 +562,7 @@ export default function Home() {
           <div className="absolute -bottom-3 -right-3">
             <Image src="/images/pixel-corner.svg" width={24} height={24} alt="corner" className="transform rotate-180" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center font-[family-name:var(--font-display)] text-blue-800">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center font-[family-name:var(--font-display)] text-black">
             About HackHerVerse
           </h2>
           <div className="glassmorphism rounded-3xl p-6 md:p-8 relative overflow-hidden">
@@ -612,18 +611,23 @@ export default function Home() {
           <div className="absolute -bottom-3 -right-3">
             <Image src="/images/pixel-corner.svg" width={24} height={24} alt="corner" className="transform rotate-180" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center font-[family-name:var(--font-display)] text-blue-800">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center font-[family-name:var(--font-display)] text-black">
             Rules
           </h2>
           <div className="mb-8 glassmorphism rounded-2xl p-6 text-center">
             <h3 className="text-2xl font-bold mb-4 font-[family-name:var(--font-display)] text-pink-600">Download Presentation</h3>
             <p className="text-base text-blue-800 font-[family-name:var(--font-sans)] mb-4">Download the presentation to get all the details about the hackathon rules, submission guidelines, and judging criteria.</p>
-            <a href="/Hackerverse_PPT.pptx" download className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-pink-400 to-blue-400 text-white font-bold rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <BubbleButton 
+              primary 
+              href="/Hackerverse_PPT.pptx" 
+              download 
+              className="inline-flex items-center justify-center gap-2 min-w-[200px]"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 inline-flex mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
-              Download PPT
-            </a>
+              <span>Download PPT</span>
+            </BubbleButton>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
@@ -693,7 +697,7 @@ export default function Home() {
           <div className="absolute -bottom-3 -right-3">
             <Image src="/images/pixel-corner.svg" width={24} height={24} alt="corner" className="transform rotate-180" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center font-[family-name:var(--font-display)] text-blue-800">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center font-[family-name:var(--font-display)] text-black">
             Themes
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
@@ -740,7 +744,7 @@ export default function Home() {
           <div className="absolute -bottom-3 -right-3">
             <Image src="/images/pixel-corner.svg" width={24} height={24} alt="corner" className="transform rotate-180" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center font-[family-name:var(--font-display)] text-blue-800">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center font-[family-name:var(--font-display)] text-black">
             Timeline
           </h2>
           <div className="ml-4">
@@ -791,7 +795,7 @@ export default function Home() {
           <div className="absolute -bottom-3 -right-3">
             <Image src="/images/pixel-corner.svg" width={24} height={24} alt="corner" className="transform rotate-180" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center font-[family-name:var(--font-display)] text-blue-800">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center font-[family-name:var(--font-display)] text-black">
             Prize Pool
           </h2>
           <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
@@ -804,7 +808,7 @@ export default function Home() {
                 </div>
               </div>
               <h3 className="text-2xl font-bold text-blue-700 mb-2 font-[family-name:var(--font-display)]">Second Prize</h3>
-              <p className="text-pink-600 font-bold text-3xl mb-2">₹15,000</p>
+              <p className="text-pink-600 font-bold text-3xl mb-2">₹5,000</p>
               <p className="text-blue-800 text-base font-[family-name:var(--font-sans)]">For the first runner-up team</p>
             </div>
             
@@ -817,7 +821,7 @@ export default function Home() {
                 </div>
               </div>
               <h3 className="text-3xl font-bold text-pink-600 mb-2 font-[family-name:var(--font-display)]">First Prize</h3>
-              <p className="text-pink-600 font-bold text-4xl mb-2">₹25,000</p>
+              <p className="text-pink-600 font-bold text-4xl mb-2">₹10,000</p>
               <p className="text-blue-800 text-base font-[family-name:var(--font-sans)]">For the winning team</p>
             </div>
             
@@ -830,7 +834,7 @@ export default function Home() {
                 </div>
               </div>
               <h3 className="text-2xl font-bold text-blue-700 mb-2 font-[family-name:var(--font-display)]">Third Prize</h3>
-              <p className="text-pink-600 font-bold text-3xl mb-2">₹10,000</p>
+              <p className="text-pink-600 font-bold text-3xl mb-2">₹5,000</p>
               <p className="text-blue-800 text-base font-[family-name:var(--font-sans)]">For the second runner-up team</p>
             </div>
           </div>
@@ -856,7 +860,7 @@ export default function Home() {
           <div className="absolute -bottom-3 -right-3">
             <Image src="/images/pixel-corner.svg" width={24} height={24} alt="corner" className="transform rotate-180" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center font-[family-name:var(--font-display)] text-blue-800">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center font-[family-name:var(--font-display)] text-black">
             Frequently Asked Questions
           </h2>
           
@@ -886,6 +890,14 @@ export default function Home() {
               question="How will the projects be judged?" 
               answer="Projects will be evaluated based on innovation, technical complexity, practicality, presentation quality, and adherence to the chosen theme. Our panel of judges includes industry professionals and academics."
             />
+            <FaqItem 
+              question="Can we form teams from different colleges?" 
+              answer="Yes, you can form teams from different colleges, but all team members must be from the same college."
+            />
+            <FaqItem
+              question="Can we showcase hardware projects?"
+              answer="This is a a software-focused hackathon. Projects that combine software and hardware are allowed, as long as the demo can be presented clearly online. Howewever, purely hardware-based projects are not allowed."
+            />
           </div>
         </div>
       </section>
@@ -909,7 +921,7 @@ export default function Home() {
           <div className="absolute -bottom-3 -right-3">
             <Image src="/images/pixel-corner.svg" width={24} height={24} alt="corner" className="transform rotate-180" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center font-[family-name:var(--font-display)] text-blue-800">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center font-[family-name:var(--font-display)] text-black">
             Organized By
           </h2>
           
@@ -930,14 +942,12 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="glassmorphism rounded-2xl p-6 text-center">
               <h4 className="text-xl font-bold text-blue-700 mb-1 font-[family-name:var(--font-display)]">Dr P Kumar</h4>
-              <p className="text-pink-600 text-base mb-2 font-[family-name:var(--font-sans)]">Professor, Computer Science</p>
-              <p className="text-blue-800 text-base font-[family-name:var(--font-sans)]">Faculty Advisor, WTM REC</p>
+              <p className="text-blue-800 text-base font-[family-name:var(--font-sans)]">Convenor, WTM REC</p>
             </div>
             
             <div className="glassmorphism rounded-2xl p-6 text-center">
               <h4 className="text-xl font-bold text-blue-700 mb-1 font-[family-name:var(--font-display)]">Dr. Rakesh Kumar</h4>
-              <p className="text-pink-600 text-base mb-2 font-[family-name:var(--font-sans)]">Associate Professor, IT Department</p>
-              <p className="text-blue-800 text-base font-[family-name:var(--font-sans)]">Technical Mentor, WTM REC</p>
+              <p className="text-blue-800 text-base font-[family-name:var(--font-sans)]">Faculty Coordinator, WTM REC</p>
             </div>
           </div>
         </div>
@@ -986,7 +996,7 @@ export default function Home() {
       <section id="contact">
       <footer className="py-8 px-4 sm:px-6 md:px-8">
         <div className="max-w-4xl mx-auto text-center section-container">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 font-[family-name:var(--font-display)] text-pink-600">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 font-[family-name:var(--font-display)] text-black-600">
             Contact Us
           </h2>
           
@@ -1054,7 +1064,7 @@ export default function Home() {
             </a>
           </div>
           
-          <p className="text-sm text-purple-700">
+          <p className="text-sm text-blue-800">
             © 2025 WTM REC. All rights reserved.
           </p>
         </div>

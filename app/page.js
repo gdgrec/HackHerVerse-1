@@ -3,7 +3,9 @@
 import Image from "next/image";
 import { useEffect, useState } from 'react';
 
-// Components
+/* ===== NAVBAR COMPONENT ===== */
+
+
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
@@ -22,7 +24,7 @@ const Navbar = () => {
           <span className="font-bold text-pink-500 text-sm sm:text-base md:text-lg">HackHerVerse~1</span>
         </div>
         
-        {/* Desktop Menu - Hidden on small screens, visible on medium and up */}
+        
         <div className="hidden md:flex md:space-x-4 lg:space-x-5 xl:space-x-6 items-center">
           <NavLink href="#hero" className="px-2 md:px-2 lg:px-3 xl:px-4 text-xs md:text-sm lg:text-base xl:text-lg">Home</NavLink>
           <NavLink href="#about" className="px-2 md:px-2 lg:px-3 xl:px-4 text-xs md:text-sm lg:text-base xl:text-lg">About</NavLink>
@@ -34,7 +36,7 @@ const Navbar = () => {
           <NavLink href="#contact" className="px-2 md:px-2 lg:px-3 xl:px-4 text-xs md:text-sm lg:text-base xl:text-lg">Contact</NavLink>
         </div>
         
-        {/* Mobile Menu Button - Visible on small screens, hidden on medium and up */}
+        
         <div className="md:hidden">
           <button 
             onClick={toggleMobileMenu}
@@ -48,10 +50,10 @@ const Navbar = () => {
         </div>
       </div>
       
-      {/* Mobile Menu - Visible when toggled, hidden on medium and up */}
+      
       <div className={`fixed top-0 right-0 bottom-0 w-48 sm:w-56 z-40 transform ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out md:hidden`}>
         <div className="h-full bg-white backdrop-blur-lg shadow-md rounded-none border-2 sm:border-3 border-[#333] box-border">
-          {/* Close button */}
+          
           <div className="flex justify-end p-3 sm:p-4">
             <button 
               onClick={closeMobileMenu}
@@ -80,6 +82,7 @@ const Navbar = () => {
   );
 };
 
+/* ===== NAVIGATION LINK COMPONENTS ===== */
 const NavLink = ({ href, children, className }) => {
   const handleClick = (e) => {
     e.preventDefault();
@@ -88,7 +91,7 @@ const NavLink = ({ href, children, className }) => {
     
     if (targetElement) {
       window.scrollTo({
-        top: targetElement.offsetTop - 70, // Adjust for navbar height
+        top: targetElement.offsetTop - 70, 
         behavior: 'smooth'
       });
     }
@@ -117,12 +120,11 @@ const MobileNavLink = ({ href, children, onClick }) => {
     
     if (targetElement) {
       window.scrollTo({
-        top: targetElement.offsetTop - 70, // Adjust for navbar height
+        top: targetElement.offsetTop - 70, 
         behavior: 'smooth'
       });
     }
     
-    // Call the original onClick (to close the mobile menu)
     if (onClick) onClick();
   };
   
@@ -141,6 +143,7 @@ const MobileNavLink = ({ href, children, onClick }) => {
   );
 };
 
+/* ===== FAQ COMPONENT ===== */
 const FaqItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
   
@@ -169,17 +172,16 @@ const FaqItem = ({ question, answer }) => {
   );
 };
 
+/* ===== UI COMPONENTS ===== */
 const PixelCloud = ({ className = '', style = {}, size = 1, variant = 1 }) => {
   // Determine which cloud variant to use
   const cloudSrc = `/images/pixel-cloud${variant > 1 ? variant : ''}.svg`;
   
-  // Determine animation class based on variant
   let animationClass = '';
   let width = 140;
   let height = 100;
-  let opacity = 0.90; // Higher opacity for better visibility
+  let opacity = 0.90; 
   
-  // Responsive sizing based on screen size
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   
   useEffect(() => {
@@ -187,17 +189,13 @@ const PixelCloud = ({ className = '', style = {}, size = 1, variant = 1 }) => {
       setIsSmallScreen(window.innerWidth < 768);
     };
     
-    // Initial check
     checkScreenSize();
     
-    // Add event listener for window resize
     window.addEventListener('resize', checkScreenSize);
     
-    // Cleanup
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
   
-  // Adjust size for smaller screens
   const responsiveSize = isSmallScreen ? size * 0.7 : size;
   
   if (variant === 1) {
@@ -285,6 +283,7 @@ const BubbleButton = ({ children, primary = false, className = '', href = '#' })
   );
 };
 
+/* ===== THEME COMPONENTS ===== */
 const ThemeCard = ({ title, icon, description }) => {
   return (
     <div className="glassmorphism rounded-2xl p-4 sm:p-5 text-center transform transition-transform hover:scale-105 hover:shadow-lg bg-gradient-to-br from-white via-blue-50/30 to-pink-50/30">
@@ -299,6 +298,7 @@ const ThemeCard = ({ title, icon, description }) => {
   );
 };
 
+/* ===== TIMELINE COMPONENTS ===== */
 const TimelineItem = ({ date, title, description }) => {
   return (
     <div className="relative mb-8 pl-6 sm:pl-8">
@@ -313,6 +313,7 @@ const TimelineItem = ({ date, title, description }) => {
   );
 };
 
+/* ===== COLLABORATOR COMPONENTS ===== */
 const CollaboratorLogo = ({ name, logo }) => {
   return (
     <div className="glassmorphism rounded-2xl p-4 flex items-center justify-center transform transition-transform hover:scale-105">
@@ -323,6 +324,7 @@ const CollaboratorLogo = ({ name, logo }) => {
   );
 };
 
+/* ===== RULE COMPONENTS ===== */
 const RuleCard = ({ number, title, points }) => {
   return (
     <div className="glassmorphism rounded-2xl p-5 relative overflow-hidden">
@@ -344,6 +346,7 @@ const RuleCard = ({ number, title, points }) => {
   );
 };
 
+/* ===== MAIN PAGE COMPONENT ===== */
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
@@ -352,19 +355,17 @@ export default function Home() {
   const [powerpuffSize, setPowerpuffSize] = useState(120);
 
   useEffect(() => {
-    // Set initial Powerpuff position based on screen size
     setPowerpuffPosition({ 
       x: window.innerWidth < 768 ? 15 : 12, 
       y: window.innerWidth < 768 ? 25 : 22 
     });
     
-    // Initialize scroll animations
     const animateOnScroll = () => {
       const elements = document.querySelectorAll('.fade-in-up, .fade-in');
       
       elements.forEach(element => {
         const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150; // Adjust this value to change when elements become visible
+        const elementVisible = 150; 
         
         if (elementTop < window.innerHeight - elementVisible) {
           element.classList.add('visible');
@@ -372,26 +373,22 @@ export default function Home() {
       });
     };
     
-    // Run once on initial load
     setTimeout(animateOnScroll, 100);
 
-    // Set initial Powerpuff size based on screen width - IMPORTANT for mobile devices
     if (window.innerWidth < 350) {
-      setPowerpuffSize(35); // Very small screens
+      setPowerpuffSize(35); 
     } else if (window.innerWidth < 640) {
-      setPowerpuffSize(45); // Small mobile screens
+      setPowerpuffSize(45); 
     } else if (window.innerWidth < 768) {
-      setPowerpuffSize(50); // Larger mobile screens
+      setPowerpuffSize(50); 
     } else if (window.innerWidth < 1024) {
-      setPowerpuffSize(55); // Tablets
+      setPowerpuffSize(55); 
     } else {
-      setPowerpuffSize(60); // Desktop
+      setPowerpuffSize(60); 
     }
     
-    // Call handleResize immediately to ensure proper sizing
     handleResize();
 
-    // Generate random sparkles
     const newSparkles = [];
     const sparkleCount = window.innerWidth < 768 ? 8 : 15;
     
@@ -407,22 +404,19 @@ export default function Home() {
     }
     setSparkles(newSparkles);
     
-    // Define handleResize function for both initial setup and window resize events
     function handleResize() {
-      // Update sparkles count based on screen width
       const sparkleCount = window.innerWidth < 768 ? 8 : 15;
       
-      // Update Powerpuff Girl size based on screen width
       if (window.innerWidth < 350) {
-        setPowerpuffSize(35); // Very small screens
+        setPowerpuffSize(35); 
       } else if (window.innerWidth < 640) {
-        setPowerpuffSize(45); // Small mobile screens
+        setPowerpuffSize(45); 
       } else if (window.innerWidth < 768) {
-        setPowerpuffSize(50); // Larger mobile screens
+        setPowerpuffSize(50); 
       } else if (window.innerWidth < 1024) {
-        setPowerpuffSize(55); // Tablets
+        setPowerpuffSize(55); 
       } else {
-        setPowerpuffSize(60); // Desktop
+        setPowerpuffSize(60); 
       }
       if (sparkleCount !== sparkles.length) {
         const updatedSparkles = [];
@@ -444,12 +438,10 @@ export default function Home() {
       }
     };
     
-    // Track scroll position for animations, cloud opacity, and Powerpuff Girl movement
     const handleScroll = () => {
       const newScrollY = window.scrollY;
       setScrollY(newScrollY);
       
-      // Animate elements on scroll
       const elements = document.querySelectorAll('.fade-in-up, .fade-in');
       elements.forEach(element => {
         const elementTop = element.getBoundingClientRect().top;
@@ -460,19 +452,15 @@ export default function Home() {
         }
       });
       
-      // Calculate Powerpuff Girl position based on scroll
       const maxScroll = document.body.scrollHeight - window.innerHeight;
       const scrollPercentage = Math.min(newScrollY / maxScroll, 1);
       
-      // Base position is in the left side, below the navbar
       const baseX = window.innerWidth < 768 ? 15 : 12;
       const baseY = window.innerWidth < 768 ? 25 : 22;
       
-      // Enhanced wave motion with larger amplitude and multiple frequencies
-      const waveAmplitudeX = 8; // Increased horizontal movement
-      const waveAmplitudeY = 6; // Increased vertical movement
+      const waveAmplitudeX = 8; 
+      const waveAmplitudeY = 6; 
       
-      // Complex motion pattern using multiple sine waves
       const newX = baseX + 
         Math.sin(scrollPercentage * Math.PI * 2) * waveAmplitudeX + 
         Math.sin(scrollPercentage * Math.PI * 4) * (waveAmplitudeX * 0.3);
@@ -484,10 +472,8 @@ export default function Home() {
       setPowerpuffPosition({ x: newX, y: newY });
     };
     
-    // Add resize event listener
     window.addEventListener('resize', handleResize);
     
-    // Call handleResize once to set initial sizes
     handleResize();
     window.addEventListener('scroll', handleScroll);
     
@@ -495,13 +481,14 @@ export default function Home() {
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []); // Run only once on mount
+  }, []); 
   
   return (
     <main className="relative min-h-screen overflow-hidden">
-      {/* Background Clouds - simplified */}
+      
+      {/* ===== BACKGROUND ELEMENTS ===== */}
+      
       <div className="fixed pointer-events-none z-0 w-full h-full overflow-hidden cloud-container ${scrollY > 100 ? 'scrolled' : ''}">
-        {/* Enhanced clouds with larger sizes and better visibility */}
         <PixelCloud className="absolute top-[10%] left-[5%]" variant={1} size={1.6} />
         <PixelCloud className="absolute top-[15%] right-[10%]" variant={2} size={1.4} />
         <PixelCloud className="absolute top-[60%] left-[15%]" variant={3} size={1.5} />
@@ -510,7 +497,7 @@ export default function Home() {
         <PixelCloud className="absolute top-[30%] left-[30%]" variant={1} size={1.3} />
       </div>
       
-      {/* Enhanced Random Sparkles */}
+      
       {sparkles.map((sparkle) => (
         <div
           key={sparkle.id}
@@ -522,14 +509,14 @@ export default function Home() {
             animationDelay: `${sparkle.delay}s`,
             animationDuration: `${sparkle.duration}s`,
             zIndex: 5,
-            opacity: 1 /* Full visibility */
+            opacity: 1 
           }}
         >
           <div className="sparkle"></div>
         </div>
       ))}
       
-      {/* Enhanced fixed sparkles with responsive sizes for different screen sizes */}
+      
       <div className="absolute top-[20%] right-[15%] animate-spin-slow" style={{animationDelay: '0.7s'}}>
         <Image src="/images/pixel-sparkle.svg" width={36} height={36} alt="sparkle" className="w-[36px] h-[36px] sm:w-[48px] sm:h-[48px] opacity-90" />
       </div>
@@ -543,7 +530,8 @@ export default function Home() {
         <Image src="/images/pixel-sparkle.svg" width={38} height={38} alt="sparkle" className="w-[38px] h-[38px] sm:w-[50px] sm:h-[50px] opacity-90" />
       </div>
       
-      {/* Powerpuff Girl that follows scroll */}
+      
+      {/* ===== FLOATING POWERPUFF CHARACTER ===== */}
       <div 
         className="fixed pointer-events-none z-10 transition-all duration-300 ease-out"
         style={{
@@ -567,10 +555,12 @@ export default function Home() {
         </div>
       </div>
       
-      {/* Navbar */}
+      
+      {/* ===== NAVIGATION BAR ===== */}
       <Navbar />
       
-      {/* Hero Section */}
+      
+      {/* ===== HERO SECTION ===== */}
       <section id="hero" className="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 sm:px-6 md:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col items-center justify-center mb-10">
@@ -620,7 +610,8 @@ export default function Home() {
         <Image src="/images/pixel-divider.svg" width={800} height={24} alt="divider" className="w-full max-w-4xl" />
       </div>
       
-      {/* About Section */}
+      
+      {/* ===== ABOUT SECTION ===== */}
       <section id="about" className="py-12 px-4 sm:px-6 md:px-8">
         <div className="max-w-4xl mx-auto section-container relative">
           <div className="absolute -top-3 -left-3">
@@ -675,7 +666,8 @@ export default function Home() {
         <Image src="/images/pixel-divider.svg" width={800} height={24} alt="divider" className="w-full max-w-4xl" />
       </div>
       
-      {/* Rules Section */}
+      
+      {/* ===== RULES SECTION ===== */}
       <section id="rules" className="py-12 px-4 sm:px-6 md:px-8">
         <div className="max-w-4xl mx-auto section-container relative">
           <div className="absolute -top-3 -left-3">
@@ -766,7 +758,8 @@ export default function Home() {
         <Image src="/images/pixel-divider.svg" width={800} height={24} alt="divider" className="w-full max-w-4xl" />
       </div>
       
-      {/* Theme Section */}
+      
+      {/* ===== THEMES SECTION ===== */}
       <section id="themes" className="py-12 px-4 sm:px-6 md:px-8">
         <div className="max-w-4xl mx-auto section-container relative">
           <div className="absolute -top-3 -left-3">
@@ -819,7 +812,8 @@ export default function Home() {
         <Image src="/images/pixel-divider.svg" width={800} height={24} alt="divider" className="w-full max-w-4xl" />
       </div>
       
-      {/* Timeline Section */}
+      
+      {/* ===== TIMELINE SECTION ===== */}
       <section id="timeline" className="py-12 px-4 sm:px-6 md:px-8">
         <div className="max-w-4xl mx-auto section-container relative">
           <div className="absolute -top-3 -left-3">
@@ -876,7 +870,8 @@ export default function Home() {
         <Image src="/images/pixel-divider.svg" width={800} height={24} alt="divider" className="w-full max-w-4xl" />
       </div>
 
-      {/* Prize Pool Section */}
+      
+      {/* ===== PRIZES SECTION ===== */}
       <section id="prizes" className="py-12 px-4 sm:px-6 md:px-8">
         <div className="max-w-4xl mx-auto section-container relative">
           <div className="absolute -top-3 -left-3">
@@ -901,7 +896,7 @@ export default function Home() {
             </span>
           </h2>
           <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-            {/* Second Prize */}
+            
             <div className="glassmorphism rounded-2xl p-6 text-center w-full md:w-1/3 transform md:translate-y-4">
               <div className="relative mb-4 mx-auto w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 flex items-center justify-center">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full opacity-70 animate-pulse-slow"></div>
@@ -914,7 +909,7 @@ export default function Home() {
               <p className="text-blue-800 text-responsive-lg font-[family-name:var(--font-sans)]">For the first runner-up team</p>
             </div>
             
-            {/* First Prize */}
+            
             <div className="glassmorphism rounded-2xl p-6 text-center w-full md:w-1/3 transform scale-110 z-10">
               <div className="relative mb-4 mx-auto w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 flex items-center justify-center">
                 <div className="absolute inset-0 bg-gradient-to-r from-pink-400 to-pink-500 rounded-full opacity-70 animate-pulse-slow"></div>
@@ -927,7 +922,7 @@ export default function Home() {
               <p className="text-pink-600 text-responsive-lg font-[family-name:var(--font-sans)]">For the winning team</p>
             </div>
             
-            {/* Third Prize */}
+            
             <div className="glassmorphism rounded-2xl p-6 text-center w-full md:w-1/3 transform md:translate-y-4">
               <div className="relative mb-4 mx-auto w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 flex items-center justify-center">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full opacity-70 animate-pulse-slow"></div>
@@ -947,7 +942,8 @@ export default function Home() {
         <Image src="/images/pixel-divider.svg" width={800} height={24} alt="divider" className="w-full max-w-4xl" />
       </div>
 
-      {/* FAQ Section */}
+      
+      {/* ===== FAQ SECTION ===== */}
       <section id="faq" className="py-12 px-4 sm:px-6 md:px-8">
         <div className="max-w-4xl mx-auto section-container relative">
           <div className="absolute -top-3 -left-3">
@@ -972,7 +968,7 @@ export default function Home() {
             </span>
           </h2>
           
-          {/* FAQ Accordion */}
+          
           <div className="space-y-4">
             <FaqItem 
               question="Who can participate in HackHerVerse?" 
@@ -1014,7 +1010,8 @@ export default function Home() {
         <Image src="/images/pixel-divider.svg" width={800} height={24} alt="divider" className="w-full max-w-4xl" />
       </div>
 
-      {/* Organized By Section */}
+      
+      {/* ===== ORGANIZERS SECTION ===== */}
       <section id="organizers" className="py-12 px-4 sm:px-6 md:px-8">
         <div className="max-w-4xl mx-auto section-container relative">
           <div className="absolute -top-3 -left-3">
@@ -1115,8 +1112,10 @@ export default function Home() {
       </div>
       */}
       
-      {/* Footer */}
+      
+      {/* ===== CONTACT SECTION ===== */}
       <section id="contact">
+      {/* ===== FOOTER ===== */}
       <footer className="py-8 px-4 sm:px-6 md:px-8">
         <div className="max-w-4xl mx-auto text-center section-container">
           <h2 className="text-responsive-4xl mb-8 text-center font-[family-name:var(--font-display)] text-pink-600 relative inline-block">

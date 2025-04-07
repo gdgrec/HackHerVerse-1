@@ -1063,13 +1063,13 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="glassmorphism rounded-2xl p-6 text-center">
               <h4 className="text-responsive-2xl font-bold text-blue-700 mb-1 font-[family-name:var(--font-display)]">Dr P Kumar</h4>
-              <p className="text-pink-600 text-responsive-lg mb-2 font-[family-name:var(--font-sans)]">Head Of the Department, Computer Science & Engineering</p>
+              <p className="text-pink-600 text-responsive-lg mb-2 font-[family-name:var(--font-sans)]">Head Of the Department, CSE</p>
               <p className="text-blue-800 text-responsive-lg font-[family-name:var(--font-sans)]">Convenor WTM REC</p>
             </div>
             
             <div className="glassmorphism rounded-2xl p-6 text-center">
               <h4 className="text-responsive-2xl font-bold text-blue-700 mb-1 font-[family-name:var(--font-display)]">Dr. Rakesh Kumar</h4>
-              <p className="text-pink-600 text-responsive-lg mb-2 font-[family-name:var(--font-sans)]">Assistant Professor, Computer Science & Engineering </p>
+              <p className="text-pink-600 text-responsive-lg mb-2 font-[family-name:var(--font-sans)]">Assistant Professor, CSE</p>
               <p className="text-blue-800 text-responsive-lg font-[family-name:var(--font-sans)]">Faculty Coordinator, WTM REC</p>
             </div>
           </div>

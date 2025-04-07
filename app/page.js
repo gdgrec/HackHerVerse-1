@@ -326,7 +326,7 @@ const CollaboratorLogo = ({ name, logo }) => {
 const RuleCard = ({ number, title, points }) => {
   return (
     <div className="glassmorphism rounded-2xl p-5 relative overflow-hidden">
-      <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-pink-400 to-blue-400 rounded-full flex items-center justify-center text-2xl font-bold text-white transform rotate-12">
+      <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-pink-200 to-blue-200 rounded-full flex items-center justify-center text-2xl font-semibold text-black transform rotate-12">
         {number}
       </div>
       <div className="ml-8 mt-2">

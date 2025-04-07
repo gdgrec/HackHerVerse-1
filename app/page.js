@@ -1045,7 +1045,7 @@ export default function Home() {
           </div>
 
           <div className="flex justify-center space-x-6 mb-6">
-            <a href="https://www.linkedin.com/company/women-techmakers-rec?trk=public_post_feed-actor-name" className="text-blue-800 hover:text-blue-600 transition-colors relative group">
+            <a href="https://www.linkedin.com/company/women-techmakers-rec?trk=public_post_feed-actor-name" target="_blank" rel="noopener noreferrer" className="text-blue-800 hover:text-blue-600 transition-colors relative group">
               <span className="text-2xl">
                 <Image src="/linkedin.svg" width={24} height={24} alt="LinkedIn" />
               </span>
@@ -1053,14 +1053,14 @@ export default function Home() {
                 <Image src="/images/pixel-sparkle.svg" width={12} height={12} alt="sparkle" />
               </span>
             </a>
-            <a href="https://www.instagram.com/wtmrec/#" className="text-blue-800 hover:text-blue-600 transition-colors relative group">
+            <a href="https://www.instagram.com/wtmrec/#" target="_blank" rel="noopener noreferrer" className="text-blue-800 hover:text-blue-600 transition-colors relative group">
               <Image src="/instagram.svg" width={24} height={24} alt="Instagram" />
               <span className="absolute -top-2 -right-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <Image src="/images/pixel-sparkle.svg" width={12} height={12} alt="sparkle" />
               </span>
             </a>
             <a href="https://www.youtube.com/@gdgrec" target="_blank" rel="noopener noreferrer" className="text-blue-800 hover:text-blue-600 transition-colors relative group">
-              <Image src="/youtube.svg" width={24} height={24} alt="Gmail" />
+              <Image src="/youtube.svg" width={26} height={26} alt="Gmail" />
               <span className="absolute -top-2 -right-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <Image src="/images/pixel-sparkle.svg" width={12} height={12} alt="sparkle" />
               </span>

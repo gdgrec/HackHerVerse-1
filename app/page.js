@@ -328,7 +328,7 @@ const RuleCard = ({ number, title, points }) => {
     <div className="glassmorphism rounded-2xl p-5 relative overflow-hidden">
       <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-pink-200 to-blue-200 rounded-full flex items-center justify-center text-2xl font-semibold text-black transform rotate-12">
         {number}
-      </div>
+      </div>s
       <div className="ml-8 mt-2">
         <h3 className="text-2xl font-bold mb-3 font-[family-name:var(--font-display)] text-pink-600">{title}</h3>
         <ul className="space-y-2">
@@ -1059,7 +1059,7 @@ export default function Home() {
             </div>
           </div>
           
-          <h3 className="text-responsive-3xl font-bold text-center text-pink-600 mb-6 font-[family-name:var(--font-display)]">Faculty Coordinators</h3>
+          <h3 className="text-responsive-3xl text-center text-pink-600 mb-6 font-[family-name:var(--font-display)]">Faculty Coordinators</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="glassmorphism rounded-2xl p-6 text-center">
               <h4 className="text-responsive-2xl font-bold text-blue-700 mb-1 font-[family-name:var(--font-display)]">Dr P Kumar</h4>

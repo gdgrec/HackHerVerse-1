@@ -1,13 +1,30 @@
 'use client';
 
 import Image from "next/image";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+// Register GSAP plugins safely
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 /* ===== NAVBAR COMPONENT ===== */
-
-
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navbarRef = useRef(null);
+  
+  useEffect(() => {
+    if (typeof window !== 'undefined' && navbarRef.current) {
+      gsap.from(navbarRef.current, {
+        y: -100,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out"
+      });
+    }
+  }, []);
   
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -18,7 +35,7 @@ const Navbar = () => {
   };
   
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 px-2 sm:px-3 py-2 md:px-4 md:py-2">
+    <nav ref={navbarRef} className="fixed top-0 left-0 right-0 z-50 px-2 sm:px-3 py-2 md:px-4 md:py-2">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between relative bg-white border-2 border-[#333] shadow-md rounded-none">
         <div className="flex items-center">
           <span className="font-bold text-pink-500 text-sm sm:text-base md:text-lg">HackHerVerse~1</span>
@@ -353,6 +370,100 @@ export default function Home() {
   const [sparkles, setSparkles] = useState([]);
   const [powerpuffPosition, setPowerpuffPosition] = useState({ x: 12, y: 22 });
   const [powerpuffSize, setPowerpuffSize] = useState(120);
+  
+  const heroRef = useRef(null);
+  const aboutRef = useRef(null);
+  const rulesRef = useRef(null);
+  const themesRef = useRef(null);
+  const timelineRef = useRef(null);
+  const prizesRef = useRef(null);
+  const faqRef = useRef(null);
+  const contactRef = useRef(null);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    // Hero section animation
+    if (heroRef.current) {
+      gsap.from(heroRef.current, {
+        opacity: 0,
+        y: 50,
+        duration: 1.5,
+        ease: "power3.out"
+      });
+    }
+
+    // Section animations
+    const sections = [
+      { ref: aboutRef, className: 'gsap-fade-in-up' },
+      { ref: rulesRef, className: 'gsap-fade-in-left' },
+      { ref: themesRef, className: 'gsap-fade-in-right' },
+      { ref: timelineRef, className: 'gsap-fade-in-up' },
+      { ref: prizesRef, className: 'gsap-scale-in' },
+      { ref: faqRef, className: 'gsap-fade-in-up' },
+      { ref: contactRef, className: 'gsap-fade-in' }
+    ];
+
+    sections.forEach(({ ref }) => {
+      if (ref.current) {
+        gsap.from(ref.current, {
+          scrollTrigger: {
+            trigger: ref.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+          },
+          opacity: 0,
+          y: 50,
+          duration: 1,
+          ease: "power3.out"
+        });
+      }
+    });
+
+    // Powerpuff character animation
+    const powerpuffElement = document.querySelector(".powerpuff-animate");
+    if (powerpuffElement) {
+      gsap.to(powerpuffElement, {
+        y: 20,
+        duration: 2,
+        repeat: -1,
+        yoyo: true,
+        ease: "power1.inOut"
+      });
+    }
+
+    // Sparkle animations
+    const sparkleElements = document.querySelectorAll(".sparkle");
+    if (sparkleElements.length > 0) {
+      gsap.to(sparkleElements, {
+        rotation: 360,
+        duration: 4,
+        repeat: -1,
+        ease: "none"
+      });
+    }
+
+    // Cloud animations
+    const cloudContainer = document.querySelector(".cloud-container");
+    if (cloudContainer) {
+      gsap.to(cloudContainer, {
+        scrollTrigger: {
+          trigger: "body",
+          start: "top top",
+          end: "max",
+          scrub: true
+        },
+        opacity: 0.4
+      });
+    }
+
+    // Cleanup
+    return () => {
+      if (typeof window !== 'undefined') {
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      }
+    };
+  }, []);
 
   useEffect(() => {
     setPowerpuffPosition({ 
@@ -561,7 +672,7 @@ export default function Home() {
       
       
       {/* ===== HERO SECTION ===== */}
-      <section id="hero" className="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 sm:px-6 md:px-8">
+      <section ref={heroRef} id="hero" className="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 sm:px-6 md:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col items-center justify-center mb-10">
             <div className="animate-pulse-slow relative">
@@ -612,7 +723,7 @@ export default function Home() {
       
       
       {/* ===== ABOUT SECTION ===== */}
-      <section id="about" className="py-12 px-4 sm:px-6 md:px-8">
+      <section ref={aboutRef} id="about" className="py-12 px-4 sm:px-6 md:px-8">
         <div className="max-w-4xl mx-auto section-container relative">
           <div className="absolute -top-3 -left-3">
             <Image src="/images/pixel-corner.svg" width={24} height={24} alt="corner" className="transform rotate-0" />
@@ -668,7 +779,7 @@ export default function Home() {
       
       
       {/* ===== RULES SECTION ===== */}
-      <section id="rules" className="py-12 px-4 sm:px-6 md:px-8">
+      <section ref={rulesRef} id="rules" className="py-12 px-4 sm:px-6 md:px-8">
         <div className="max-w-4xl mx-auto section-container relative">
           <div className="absolute -top-3 -left-3">
             <Image src="/images/pixel-corner.svg" width={24} height={24} alt="corner" className="transform rotate-0" />
@@ -747,7 +858,7 @@ export default function Home() {
                 "Be punctual for all hackathon activities.",
                 "Treat all fellow participants, mentors, and judges with respect.",
                 "Harassment, discrimination, or misconduct will not be tolerated.",
-                "Judges' decisions are final and binding."
+                "Judges' decisions are final and binding."
               ]}
             />
           </div>
@@ -760,7 +871,7 @@ export default function Home() {
       
       
       {/* ===== THEMES SECTION ===== */}
-      <section id="themes" className="py-12 px-4 sm:px-6 md:px-8">
+      <section ref={themesRef} id="themes" className="py-12 px-4 sm:px-6 md:px-8">
         <div className="max-w-4xl mx-auto section-container relative">
           <div className="absolute -top-3 -left-3">
             <Image src="/images/pixel-corner.svg" width={24} height={24} alt="corner" className="transform rotate-0" />
@@ -814,7 +925,7 @@ export default function Home() {
       
       
       {/* ===== TIMELINE SECTION ===== */}
-      <section id="timeline" className="py-12 px-4 sm:px-6 md:px-8">
+      <section ref={timelineRef} id="timeline" className="py-12 px-4 sm:px-6 md:px-8">
         <div className="max-w-4xl mx-auto section-container relative">
           <div className="absolute -top-3 -left-3">
             <Image src="/images/pixel-corner.svg" width={24} height={24} alt="corner" className="transform rotate-0" />
@@ -872,7 +983,7 @@ export default function Home() {
 
       
       {/* ===== PRIZES SECTION ===== */}
-      <section id="prizes" className="py-12 px-4 sm:px-6 md:px-8">
+      <section ref={prizesRef} id="prizes" className="py-12 px-4 sm:px-6 md:px-8">
         <div className="max-w-4xl mx-auto section-container relative">
           <div className="absolute -top-3 -left-3">
             <Image src="/images/pixel-corner.svg" width={24} height={24} alt="corner" className="transform rotate-0" />
@@ -944,7 +1055,7 @@ export default function Home() {
 
       
       {/* ===== FAQ SECTION ===== */}
-      <section id="faq" className="py-12 px-4 sm:px-6 md:px-8">
+      <section ref={faqRef} id="faq" className="py-12 px-4 sm:px-6 md:px-8">
         <div className="max-w-4xl mx-auto section-container relative">
           <div className="absolute -top-3 -left-3">
             <Image src="/images/pixel-corner.svg" width={24} height={24} alt="corner" className="transform rotate-0" />
@@ -1114,7 +1225,7 @@ export default function Home() {
       
       
       {/* ===== CONTACT SECTION ===== */}
-      <section id="contact">
+      <section ref={contactRef} id="contact">
       {/* ===== FOOTER ===== */}
       <footer className="py-8 px-4 sm:px-6 md:px-8">
         <div className="max-w-4xl mx-auto text-left section-container">

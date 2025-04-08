@@ -1117,9 +1117,9 @@ export default function Home() {
       <section id="contact">
       {/* ===== FOOTER ===== */}
       <footer className="py-8 px-4 sm:px-6 md:px-8">
-        <div className="max-w-4xl mx-auto text-center section-container">
-          <h2 className="text-responsive-4xl mb-8 text-center font-[family-name:var(--font-display)] text-pink-600 relative inline-block">
-            <span className="relative z-10">Contact Us</span>
+        <div className="max-w-4xl mx-auto text-left section-container">
+          <h2 className="text-responsive-4xl mb-8 text-left font-[family-name:var(--font-display)] text-black relative inline-block">
+            <span className=" relative z-10">Contact Us</span>
             <span className="absolute -top-4 sm:-top-6 -right-4 sm:-right-6">
               <Image src="/images/pixel-sparkle.svg" width={30} height={30} alt="sparkle" className="sm:w-[40px] sm:h-[40px] animate-pulse" />
             </span>
@@ -1130,7 +1130,7 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
             <div className="glassmorphism p-4 rounded-xl">
-              <p className="font-bold text-blue-800 mb-1 text-responsive-lg font-[family-name:var(--font-display)]">Sakthisree Moliyan Vel</p>
+              <p className="font-bold text-blue-800 mb-1 text-center text-responsive-lg font-[family-name:var(--font-display)]">Sakthisree Moliyan Vel</p>
               <a href="tel:+918825522339" className="text-pink-500 hover:text-pink-700 transition-colors flex items-center justify-center text-responsive-lg font-[family-name:var(--font-sans)]">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -1140,7 +1140,7 @@ export default function Home() {
             </div>
             
             <div className="glassmorphism p-4 rounded-xl">
-              <p className="font-bold text-blue-800 mb-1 text-responsive-lg font-[family-name:var(--font-display)]">Srevarsha N</p>
+              <p className="font-bold text-blue-800 mb-1 text-center text-responsive-lg font-[family-name:var(--font-display)]">Srevarsha N</p>
               <a href="tel:+917200246022" className="text-pink-500 hover:text-pink-700 transition-colors flex items-center justify-center text-responsive-lg font-[family-name:var(--font-sans)]">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -1150,7 +1150,7 @@ export default function Home() {
             </div>
             
             <div className="glassmorphism p-4 rounded-xl">
-              <p className="font-bold text-blue-800 mb-1 text-responsive-lg font-[family-name:var(--font-display)]">Prajein C K</p>
+              <p className="font-bold text-blue-800 mb-1 text-center text-responsive-lg font-[family-name:var(--font-display)]">Prajein C K</p>
               <a href="tel:+917200467328" className="text-pink-500 hover:text-pink-700 transition-colors flex items-center justify-center text-responsive-lg font-[family-name:var(--font-sans)]">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -1161,12 +1161,12 @@ export default function Home() {
           </div>
           
           <div className="p-4 rounded-xl mb-8 max-w-[300px] mx-auto">
-            <p className="font-bold text-blue-800 mb-2 text-responsive-lg font-[family-name:var(--font-display)]">Email us at</p>
-            <a href="mailto:gdgrec@gmail.com" className="text-pink-500 hover:text-pink-700 transition-colors flex items-center justify-center text-responsive-lg font-[family-name:var(--font-sans)]">
+            <p className="font-bold text-blue-800 mb-2 text-center text-responsive-lg font-[family-name:var(--font-display)]">Email us at</p>
+            <a href="mailto:gdg@rajalakshmi.edu.in" target="_blank" rel="noopener noreferrer" className="text-pink-500 hover:text-pink-700 transition-colors flex items-center justify-center text-responsive-lg font-[family-name:var(--font-sans)]">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              gdgrec@gmail.com
+              gdg@rajalakshmi.edu.in
             </a>
           </div>
 
@@ -1193,7 +1193,7 @@ export default function Home() {
             </a>
           </div>
           
-          <div className="mb-4 glassmorphism p-3 rounded-xl max-w-[250px] mx-auto group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <div className="mb-4 p-3 rounded-xl max-w-[250px] mx-auto group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
             <div className="flex items-center justify-center space-x-2 mb-1">
               <p className="text-base text-blue-800 font-bold font-[family-name:var(--font-display)] relative">
                 <span className="absolute -top-1 -right-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -1205,13 +1205,12 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
               </svg>
             </div>
-            <a href="https://www.linkedin.com/in/srevarsha" target="_blank" rel="noopener noreferrer" 
-               className="text-pink-500 hover:text-pink-700 transition-all duration-300 font-medium text-responsive-lg flex items-center justify-center group-hover:scale-105">
+            <a href="https://www.linkedin.com/in/srevarsha" target="_blank" rel="noopener noreferrer" className="text-pink-500 hover:text-pink-700 transition-all duration-300 font-medium text-responsive-lg flex items-center justify-center group-hover:scale-105">
               Sre varsha N
             </a>
           </div>
           
-          <p className="text-responsive-lg text-purple-700 font-medium">
+          <p className="text-responsive-md text-center text-pink-600 font-medium">
             &copy; 2025 WTM REC. All rights reserved.
           </p>
         </div>
